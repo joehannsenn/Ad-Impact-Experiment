@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#experiment-controls {
+  background: #222;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#experiment-controls.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#status-bar {
+  background: #f0f0f0;
+  padding: 6px 12px;
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #ddd;
+}
+
+#page {
+  display: flex;
+  min-height: calc(100vh - 90px);
+}
+
+.ad-column {
+  width: 180px;
+  background: #f4f4f4;
+  padding: 10px;
+  display: none;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.ad-box {
+  background: #ffe9c7;
+  border: 1px solid #ff9a00;
+  padding: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+#content {
+  flex: 1;
+  padding: 20px;
+}
+
+.article {
+  padding: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.article:hover {
+  background: #f0f8ff;
+}
+
+.hidden {
+  display: none;
+}
+
+/* popup */
+.popup {
+  position: fixed;
+  top: 20%;
+  left: 40%;
+  width: 250px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: #fff;
+  border: 2px solid #ff9a00;
+  padding: 10px 10px 20px 10px;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#closePopup {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* modal / start screen */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.modal.visible {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px 25px;
+  max-width: 480px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content button {
+  margin-top: 16px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}

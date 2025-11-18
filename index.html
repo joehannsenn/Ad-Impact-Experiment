@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ad Impact Task</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- start screen modal -->
+  <div id="start-screen" class="modal visible">
+    <div class="modal-content">
+      <h2>Ad Impact Study</h2>
+      <p>You will see a page with several article titles. Your task is to find and click:</p>
+      <p><strong>“AI Systems in Modern Healthcare”</strong></p>
+      <p>Work as fast and accurately as possible. Try to ignore ads or popups.</p>
+      <p>
+        1. Choose a condition (No Ads / Medium Ads / Heavy Ads).<br>
+        2. Click <strong>Start Task</strong> to begin the timer.<br>
+        3. Click the correct article.<br>
+        4. Fill out the short survey.
+      </p>
+      <button id="beginExperiment">Got it, let me start</button>
+    </div>
+  </div>
+
+  <!-- top controls -->
+  <div id="experiment-controls" class="disabled">
+    <label for="condition">Condition:</label>
+    <select id="condition">
+      <option value="none">No Ads</option>
+      <option value="medium" selected>Medium Ads</option>
+      <option value="heavy">Heavy Ads</option>
+    </select>
+    <button id="startBtn">Start Task</button>
+  </div>
+
+  <!-- status bar -->
+  <div id="status-bar">
+    <span id="status-condition">Condition: —</span>
+    <span id="status-timer">Time: 0.00s</span>
+    <span id="status-clicks">Clicks: 0</span>
+    <span id="status-adclicks">Ad Clicks: 0</span>
+  </div>
+
+  <div id="page">
+    <aside id="left-ads" class="ad-column"></aside>
+
+    <main id="content">
+      <h1>Find the Correct Article</h1>
+      <p id="task-text">
+        Task: Find and click the article titled
+        <strong>“AI Systems in Modern Healthcare”</strong> as fast as you can.
+      </p>
+
+      <ul id="article-list">
+        <li class="article" data-correct="false">Sports Update: Local team wins championship</li>
+        <li class="article" data-correct="false">Opinion: Why ads are not that bad</li>
+        <li class="article" data-correct="true">AI Systems in Modern Healthcare</li>
+        <li class="article" data-correct="false">Travel Guide: Hidden beaches in Spain</li>
+        <li class="article" data-correct="false">Markets: Tech stocks mixed today</li>
+      </ul>
+
+      <!-- after task -->
+      <div id="survey" class="hidden">
+        <h2>Quick Survey</h2>
+        <label for="distraction">How distracting was this page? (1–7)</label>
+        <input type="number" id="distraction" min="1" max="7" value="4" />
+        <button id="finishBtn">Finish</button>
+      </div>
+
+      <textarea id="export" class="hidden" rows="6" cols="60"></textarea>
+    </main>
+
+    <aside id="right-ads" class="ad-column"></aside>
+  </div>
+
+  <!-- popup ad -->
+  <div id="popup-ad" class="popup hidden">
+    <div class="popup-content">
+      <p>🔥 Limited Offer! Click here!</p>
+      <button id="closePopup" aria-label="Close popup">X</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
