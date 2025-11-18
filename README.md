@@ -1,4 +1,7 @@
 # Advertisement Impact Experiment
 *A study to measure the impact of advertisements on user experience and performance.*
 
-**(Work in Progress)**
+## TODO:
+- Automate data collection
+- Automate Consent forms?
+- Add more survey questions about user experience?
